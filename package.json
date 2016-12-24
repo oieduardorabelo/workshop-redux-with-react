@@ -18,5 +18,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This is a boilerplate used to do a introduction in how to use Redux with React,",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oieduardorabelo/workshop-redux-with-react.git"
+  },
+  "keywords": [],
+  "author": "Eduardo Rabelo <oieduardorabelo@gmail.com> (https://github.com/oieduardorabelo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oieduardorabelo/workshop-redux-with-react/issues"
+  },
+  "homepage": "https://github.com/oieduardorabelo/workshop-redux-with-react#readme"
 }
