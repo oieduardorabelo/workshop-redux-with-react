@@ -2,9 +2,12 @@ const scope = 'CommentBox';
 
 export const SAVE_COMMENT = scope + '/SAVE_COMMENT'
 
-export function saveComment(data) {
+export function saveComment(comment) {
     return {
         type: SAVE_COMMENT,
-        payload: data
+        payload: {
+          id: Date.now(),
+          text: comment
+        }
     }
 }
