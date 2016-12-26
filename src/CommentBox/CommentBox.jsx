@@ -18,10 +18,7 @@ export class CommentBox extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleSubmit({
-      id: Date.now(),
-      text: this.state.comment
-    })
+    this.props.handleSubmit(this.state.comment.trim())
     this.setState({ comment: '' })
   }
 
