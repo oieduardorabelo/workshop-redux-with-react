@@ -10,8 +10,8 @@ export class CommentList extends Component {
 
   render() {
     const list = this.props.comments.map(
-        item => (
-            <li key={item.id}>{item.text} <button onClick={() => this.handleDelete(item.id)} type="button">Delete</button></li>
+        (item, index) => (
+            <li key={index}>{item.text} <button onClick={() => this.handleDelete(item.id)} type="button">Delete</button></li>
         )
     )
 
