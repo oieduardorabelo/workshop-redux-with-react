@@ -15,7 +15,7 @@ function CommentListReducers(state = defaultState, action) {
             }
         case DELETE_COMMENT:
             return {
-                comments: state.comments.filter(comment => comment.id !== payload.commentId)
+                comments: state.comments.filter(comment => comment.id !== payload.id)
             }
         default:
             return state
