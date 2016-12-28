@@ -29,7 +29,7 @@ describe('<CommentBox />', () => {
 
     it('form submit should clean state', () => {
         // mapDispatchToProps setup
-        const spyHandleSubmit = jasmine.createSpy();
+        const spyHandleSubmit = jest.fn();
         const component = underTest({ handleSubmit: spyHandleSubmit })
 
         component.find('textarea').simulate('change', { target: { value: 'John Doe' } })
@@ -37,20 +37,22 @@ describe('<CommentBox />', () => {
 
         component.simulate('submit', { preventDefault })
 
-        expect(spyHandleSubmit).toHaveBeenCalledWith('John Doe') // calling mapDispatchToProps
+        // calling mapDispatchToProps
+        expect(spyHandleSubmit).toHaveBeenCalledWith('John Doe')
         expect(component.state('comment')).toBe('')
     })
 
     it('form submit when textarea keyup enter', () => {
         // mapDispatchToProps setup
-        const spyHandleSubmit = jasmine.createSpy();
+        const spyHandleSubmit = jest.fn();
         const component = underTest({ handleSubmit: spyHandleSubmit })
 
         component.find('textarea')
             .simulate('change', { target: { value: 'John Doe' } })
             .simulate('keyup', { keyCode: 13, preventDefault })
 
-        expect(spyHandleSubmit).toHaveBeenCalledWith('John Doe') // calling mapDispatchToProps
+        // calling mapDispatchToProps
+        expect(spyHandleSubmit).toHaveBeenCalledWith('John Doe')
         expect(component.state('comment')).toBe('')
     })
 })
